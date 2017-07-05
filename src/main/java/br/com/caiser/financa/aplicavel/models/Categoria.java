@@ -5,12 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonView(DataTablesOutput.View.class)
 	private Integer id;
+	@JsonView(DataTablesOutput.View.class)
 	private String descricao;
+	@JsonView(DataTablesOutput.View.class)
 	private String nome;
 
 	public Integer getId() {

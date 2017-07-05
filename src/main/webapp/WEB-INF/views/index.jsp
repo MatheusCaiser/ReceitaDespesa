@@ -1,9 +1,31 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib tagdir="/WEB-INF/tags/template" prefix="template" %>
+<%@taglib tagdir="/WEB-INF/tags/template" prefix="template"%>
 <template:root-context>
-<jsp:body>
+	<jsp:attribute name="extraScripts">
+		<script src="<c:url value='/assets/js/app.js' />" ></script>
+	</jsp:attribute>
+	<jsp:body>
 	<div class="container">
-		<h4>BEM-VINDO</h4>
+		<table id="tableFinanceira" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Valor</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        </tbody>
+    </table>
 	</div>
 </jsp:body>
 </template:root-context>

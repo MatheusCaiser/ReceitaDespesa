@@ -8,15 +8,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Despesa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonView(DataTablesOutput.View.class)
 	private Integer id;
+	@JsonView(DataTablesOutput.View.class)
 	private Date data;
+	@JsonView(DataTablesOutput.View.class)
 	private String descricao;
+	@JsonView(DataTablesOutput.View.class)
 	private Double valor;
 	@ManyToOne
+	@JsonView(DataTablesOutput.View.class)
 	private Categoria categoria;
 
 	public Integer getId() {
