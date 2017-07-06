@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.annotation.JsonView;
-
 import br.com.caiser.financa.aplicavel.models.Despesa;
 import br.com.caiser.financa.aplicavel.repositories.DespesaRepository;
 
@@ -25,10 +23,10 @@ public class FinancasController {
 	@Autowired
 	private DespesaRepository despesaRepository;
 
-	@JsonView(DataTablesOutput.View.class)
 	@RequestMapping(value = "/data/financas", method = RequestMethod.POST)
 	public DataTablesOutput<Despesa> getDespesas(@Valid @RequestBody DataTablesInput input) {
 		log.info("Passando pelo controller de Finanças!!");
 		return despesaRepository.findAll(input);
 	}
+
 }

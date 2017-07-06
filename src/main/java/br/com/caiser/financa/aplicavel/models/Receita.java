@@ -9,29 +9,25 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+import javax.validation.constraints.Null;
 
-import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
-
-import com.fasterxml.jackson.annotation.JsonView;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Receita {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonView(DataTablesOutput.View.class)
 	private Integer id;
-	@JsonView(DataTablesOutput.View.class)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date data;
-	@JsonView(DataTablesOutput.View.class)
 	private String descricao;
-	@JsonView(DataTablesOutput.View.class)
 	private Double valor;
-	@ManyToOne
-	@JsonView(DataTablesOutput.View.class)
+	@ManyToOne @Null
 	private Categoria categoria;
 
 	@Enumerated(EnumType.STRING)
-	@JsonView(DataTablesOutput.View.class)
+	@Transient
 	public Tipo getTipo() {
 		return Tipo.RECEITA;
 	};

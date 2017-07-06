@@ -12,16 +12,26 @@ $(document).ready(function() {
 		language : {
 			url : '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
 		},
-		searching : false
+		searching : false,
+		columns: [{
+			data: 'data',
+			render: function(data, type, row) {
+				return new Date(data).toLocaleDateString();
+			}
+		}, {
+			data: 'descricao'
+		}, {
+			data: 'categoria',
+			render: function(data, type, row) {
+				return data == null ? '' : data.nome; 
+			}
+		}, {
+			data: 'valor',
+			render: function(data, type, row) {
+				return data == null ? '' : data.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+			}
+		}, {
+			data: null
+		}]
 	});
-
-});
-$('#exampleModal').on('shown.bs.modal', function(event) {
-	var button = $(event.relatedTarget) // Button that triggered the modal
-	var recipient = button.data('whatever') // Extract info from data-* attributes
-	// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-	// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-	var modal = $(this)
-	modal.find('.modal-title').text('Nova ' + recipient)
-	modal.find('#DataDespesa').val(new Date().toLocaleDateString());
 });

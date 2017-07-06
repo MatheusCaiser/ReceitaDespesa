@@ -1,4 +1,3 @@
-<%@ tag language="java" pageEncoding="ISO-8859-1"%>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel">
 	<div class="modal-dialog modal-md" role="document">
@@ -11,11 +10,12 @@
 				<h4 class="modal-title" id="exampleModalLabel"></h4>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form action="" id="formulario" method="post">
 					<div>
 						<div class="form-group">
 							<label for="recipient-name" class="control-label">Descrição</label>
-							<input type="text" class="form-control" id="recipient-name">
+							<input type="text" class="form-control" id="recipient-name"
+								name="descricao">
 						</div>
 						<div class="row">
 							<div class="col-md-6">
@@ -28,7 +28,7 @@
 											<input class="form-control datepicker" data-val="true"
 												data-val-date="O campo Data deve ser uma data."
 												data-val-required="The Data field is required."
-												id="DataDespesa" name="DataDespesa" type="text"
+												id="DataDespesa" name="data" type="text"
 												value="01/01/0001 00:00:00">
 										</div>
 									</div>
@@ -45,19 +45,16 @@
 										</div>
 										<div class="col-md-8">
 											<div class="fg-line">
-												<input class="form-control dinheiro result-calculator"
-													data-val="true"
-													data-val-number="O campo Valor deve ser um número."
-													data-val-required="The Valor field is required." id="Valor"
-													name="Valor" type="text" value="0">
+												<input class="form-control" id="Valor" name="valor"
+													type="text" value="0">
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							
-							
 						</div>
+
+
 					</div>
 				</form>
 			</div>
@@ -68,3 +65,49 @@
 		</div>
 	</div>
 </div>
+<script>
+	$('#Valor').priceFormat({
+		prefix : '',
+		centsSeparator : ',',
+		thousandsSeparator : '.'
+	});
+
+	$('#DataDespesa').datepicker({
+		format : "dd/mm/yyyy",
+		language : "pt-BR", 
+		todayHighlight : true
+	});
+
+	$('#exampleModal').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget);
+		if (event.relatedTarget != undefined) {
+			var recipient = button.data('whatever');
+			var actionRecipient = button.data('action');
+			var modal = $(this);
+			modal.find('.modal-title').text('Nova ' + recipient);
+			modal.find('#DataDespesa').val(new Date().toLocaleDateString());
+			modal.find("#formulario").attr("action", actionRecipient);
+		}
+	});
+
+	$('.btn-primary').on('click', function() {
+		var form = $('#formulario');
+		var valor = $("#Valor").val();
+		valor = converteMoedaFloat(valor);
+		$("#Valor").val(valor);
+		form.submit();
+	});
+
+	function converteMoedaFloat(valor) {
+
+		if (valor === "") {
+			valor = 0;
+		} else {
+			valor = valor.replace(".", "");
+			valor = valor.replace(",", ".");
+			valor = parseFloat(valor);
+		}
+		return valor;
+
+	}
+</script>

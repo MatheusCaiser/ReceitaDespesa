@@ -20,6 +20,17 @@
 <link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-datepicker.standalone.min.css'/>">
 <link rel="stylesheet" href="<c:url value='/assets/css/material-design-iconic-font.min.css'/>">
 <jsp:invoke fragment="extraStyles" />
+
+<!-- scripts -->
+<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
+<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/assets/js/jquery.dataTables.min.js'/>"></script>
+<script src="<c:url value='/assets/js/dataTables.bootstrap4.min.js'/>"></script>
+<script src="<c:url value='/assets/js/bootstrap-datepicker.min.js'/>"></script>
+<script src="<c:url value='/assets/js/bootstrap-datepicker.pt-BR.min.js'/>"></script>
+<script src="<c:url value='/assets/js/jquery.priceformat.js'/>"></script>
+<script src="<c:url value='/assets/js/accounting.js'/>"></script>
+<jsp:invoke fragment="extraScripts" />
 </head>
 
 <body>
@@ -32,10 +43,9 @@
 
 				<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#menu" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span>
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="/">Acompanhamento Financeiro</a>
 			</div>
@@ -44,14 +54,5 @@
 
 	<!-- FINAL NAV -->
 	<jsp:doBody />
-
-	<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
-	<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
-	<script src="<c:url value='/assets/js/jquery.dataTables.min.js'/>"></script>
-	<script src="<c:url value='/assets/js/dataTables.bootstrap4.min.js'/>"></script>
-	<script src="<c:url value='/assets/js/bootstrap-datepicker.min.js'/>"></script>
-	<script src="<c:url value='/assets/js/bootstrap-datepicker.pt-BR.min.js'/>"></script>
-	<jsp:invoke fragment="extraScripts" />
-
 </body>
 </html>

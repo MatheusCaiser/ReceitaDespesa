@@ -13,6 +13,7 @@
                 <th>Descrição</th>
                 <th>Categoria</th>
                 <th>Valor</th>
+            	<th>Tipo</th>
             </tr>
         </thead>
         <tfoot>
@@ -21,23 +22,20 @@
                 <th>Descrição</th>
                 <th>Categoria</th>
                 <th>Valor</th>
+            	<th>Tipo</th>
             </tr>
         </tfoot>
         <tbody>
         </tbody>
     </table>
-	<button type="button" class="btn btn-warning" data-toggle="modal"
-				data-target="#exampleModal" data-whatever="despesa">Criar despesa</button>
+	<button type="button" class="btn btn-danger" data-toggle="modal"
+				data-target="#exampleModal" data-whatever="despesa"
+				data-backdrop="static" data-action="salvarDespesa">Criar despesa</button>
+				
+	<button type="button" class="btn btn-success" data-toggle="modal"
+				data-target="#exampleModal" data-whatever="receita"
+				data-backdrop="static" data-action="salvarReceita">Criar receita</button>
 	</div>
 	<template:formulario />
 </jsp:body>
 </template:root-context>
-<script>
-	$(document).ready(function() {
-		$('#DataDespesa').datepicker({
-			format : "dd/mm/yyyy",
-			language : "pt-BR",
-			todayHighlight : true
-		});
-	});
-</script>
