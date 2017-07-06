@@ -2,7 +2,7 @@
 <%@taglib tagdir="/WEB-INF/tags/template" prefix="template"%>
 <template:root-context>
 	<jsp:attribute name="extraScripts">
-		<script src="<c:url value='/assets/js/app.js' />" ></script>
+		<script src="<c:url value='/assets/js/app.js' />"></script>
 	</jsp:attribute>
 	<jsp:body>
 	<div class="container">
@@ -26,6 +26,18 @@
         <tbody>
         </tbody>
     </table>
+	<button type="button" class="btn btn-warning" data-toggle="modal"
+				data-target="#exampleModal" data-whatever="despesa">Criar despesa</button>
 	</div>
+	<template:formulario />
 </jsp:body>
 </template:root-context>
+<script>
+	$(document).ready(function() {
+		$('#DataDespesa').datepicker({
+			format : "dd/mm/yyyy",
+			language : "pt-BR",
+			todayHighlight : true
+		});
+	});
+</script>

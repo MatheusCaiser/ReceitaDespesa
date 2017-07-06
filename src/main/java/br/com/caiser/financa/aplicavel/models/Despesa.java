@@ -3,6 +3,8 @@ package br.com.caiser.financa.aplicavel.models;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,6 +29,12 @@ public class Despesa {
 	@ManyToOne
 	@JsonView(DataTablesOutput.View.class)
 	private Categoria categoria;
+
+	@Enumerated(EnumType.STRING)
+	@JsonView(DataTablesOutput.View.class)
+	public Tipo getTipo() {
+		return Tipo.DESPESA;
+	};
 
 	public Integer getId() {
 		return id;

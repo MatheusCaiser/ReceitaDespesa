@@ -16,8 +16,9 @@
 <!-- style -->
 <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
 <link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css">
 <link rel="stylesheet" href="<c:url value='/assets/css/dataTables.bootstrap4.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-datepicker.standalone.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/assets/css/material-design-iconic-font.min.css'/>">
 <jsp:invoke fragment="extraStyles" />
 </head>
 
@@ -48,6 +49,8 @@
 	<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value='/assets/js/jquery.dataTables.min.js'/>"></script>
 	<script src="<c:url value='/assets/js/dataTables.bootstrap4.min.js'/>"></script>
+	<script src="<c:url value='/assets/js/bootstrap-datepicker.min.js'/>"></script>
+	<script src="<c:url value='/assets/js/bootstrap-datepicker.pt-BR.min.js'/>"></script>
 	<jsp:invoke fragment="extraScripts" />
 
 </body>
