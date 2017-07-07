@@ -1,29 +1,25 @@
-# README #
+# Acompanhamento Financeiro #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Aplicação CRUD para registrar despesas e receitas financeiras
 
-### What is this repository for? ###
+### Requisitos ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Container WEB (Tomcat, Jboss)
+* Base de dados PostgreSQL -> É preciso configurar com a conexão do banco o arquivo .properties na pasta resources
+* Onde BD_URL -> endereço do banco
+* Onde BD_NAME -> nome da database
 
-### How do I get set up? ###
+### Como instalar ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Clone o repositorio
+* Entre na pasta do projeto
+* Execute na linha de comando 
 
-### Contribution guidelines ###
+	mvn clean package
+	
+* Na pasta target copie o arquivo .war na pasta de deployments do container
+* Execute na no browser o contexto da aplicação, por exemplo, http://localhost:8080/ReceitaDespesa-0.0.1-SNAPSHOT
 
-* Writing tests
-* Code review
-* Other guidelines
+### Desenvolverdor ###
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Matheus Henrique Caiser Barrozo
