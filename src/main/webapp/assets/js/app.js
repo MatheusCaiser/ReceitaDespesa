@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$("#tableFinanceira").DataTable({
 		ajax : {
 			contentType : "application/json",
-			url : '/data/financas',
+			url : 'data/financas',
 			type : 'POST',
 			data : function(d) {
 				return JSON.stringify(d)
