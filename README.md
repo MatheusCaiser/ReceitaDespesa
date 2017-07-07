@@ -9,6 +9,13 @@ Aplicação CRUD para registrar despesas e receitas financeiras
 * Onde BD_URL -> endereço do banco
 * Onde BD_NAME -> nome da database
 
+### Tecnologias utilizadas ###
+
+* Spring boot
+* Spring MVC
+* Spring-datatables-jpa
+* PostgreSQL
+
 ### Como instalar ###
 
 * Clone o repositorio
@@ -20,6 +27,6 @@ Aplicação CRUD para registrar despesas e receitas financeiras
 * Na pasta target copie o arquivo .war na pasta de deployments do container
 * Execute na no browser o contexto da aplicação, por exemplo, http://localhost:8080/ReceitaDespesa-0.0.1-SNAPSHOT
 
-### Desenvolverdor ###
+### Desenvolvedor ###
 
 * Matheus Henrique Caiser Barrozo
