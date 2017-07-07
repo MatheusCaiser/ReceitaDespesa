@@ -9,13 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 import javax.validation.constraints.Null;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Receita {
+public class Movimento {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -23,14 +23,20 @@ public class Receita {
 	private Date data;
 	private String descricao;
 	private Double valor;
-	@ManyToOne @Null
+	@ManyToOne
+	@Null
 	private Categoria categoria;
 
 	@Enumerated(EnumType.STRING)
-	@Transient
+	private Tipo tipo;
+
 	public Tipo getTipo() {
-		return Tipo.RECEITA;
-	};
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
 
 	public Integer getId() {
 		return id;

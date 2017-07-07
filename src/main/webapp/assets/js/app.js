@@ -30,8 +30,8 @@ $(document).ready(function() {
 			render: function(data, type, row) {
 				return data == null ? '' : data.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 			}
-		}, {
-			data: null
+		},{
+			data: 'tipo'
 		}]
 	});
 });

@@ -5,41 +5,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.caiser.financa.aplicavel.models.Despesa;
-import br.com.caiser.financa.aplicavel.models.Receita;
-import br.com.caiser.financa.aplicavel.repositories.DespesaRepository;
-import br.com.caiser.financa.aplicavel.repositories.ReceitaRepository;
-
+import br.com.caiser.financa.aplicavel.models.Movimento;
+import br.com.caiser.financa.aplicavel.repositories.MovimentoRepository;
 
 @Controller
 public class RootController {
 	@Autowired
-	private DespesaRepository despesaRepository;
-	
-	@Autowired
-	private ReceitaRepository receitaRepository;
-	
+	private MovimentoRepository movimentoRepository;
+
 	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
-	
-	@RequestMapping("salvarDespesa")
-	public String salvarDespesa(Despesa despesa, BindingResult result) {
-		if(result.hasErrors()) {
+
+	@RequestMapping("salvarMovimento")
+	public String salvarReceita(Movimento movimento, BindingResult result) {
+		if (result.hasErrors()) {
 			return null;
 		}
-		despesaRepository.save(despesa);
-		return index();
-	}
-	
-	@RequestMapping("salvarReceita")
-	public String salvarReceita(Receita receita, BindingResult result) {
-		if(result.hasErrors()) {
-			return null;
-		}
-		
-		receitaRepository.save(receita);
+
+		movimentoRepository.save(movimento);
 		return index();
 	}
 }

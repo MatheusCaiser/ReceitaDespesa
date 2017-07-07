@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.caiser.financa.aplicavel.models.Despesa;
-import br.com.caiser.financa.aplicavel.repositories.DespesaRepository;
+import br.com.caiser.financa.aplicavel.models.Movimento;
+import br.com.caiser.financa.aplicavel.repositories.MovimentoRepository;
 
 @RestController
 public class FinancasController {
@@ -21,12 +21,13 @@ public class FinancasController {
 	private static final Logger log = LoggerFactory.getLogger(FinancasController.class);
 
 	@Autowired
-	private DespesaRepository despesaRepository;
+	private MovimentoRepository movimentoRepository;
 
 	@RequestMapping(value = "/data/financas", method = RequestMethod.POST)
-	public DataTablesOutput<Despesa> getDespesas(@Valid @RequestBody DataTablesInput input) {
+	public DataTablesOutput<Movimento> getDespesas(@Valid @RequestBody DataTablesInput input) {
 		log.info("Passando pelo controller de Finanças!!");
-		return despesaRepository.findAll(input);
+		DataTablesOutput<Movimento> findAll2 = movimentoRepository.findAll(input);
+		return findAll2;
 	}
 
 }

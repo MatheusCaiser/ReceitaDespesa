@@ -10,7 +10,7 @@
 				<h4 class="modal-title" id="exampleModalLabel"></h4>
 			</div>
 			<div class="modal-body">
-				<form action="" id="formulario" method="post">
+				<form action="salvarMovimento" id="formulario" method="post">
 					<div>
 						<div class="form-group">
 							<label for="recipient-name" class="control-label">Descrição</label>
@@ -53,6 +53,7 @@
 								</div>
 							</div>
 						</div>
+						<input type="hidden" name="tipo" id="tipoMovimento" value=""></input>
 
 
 					</div>
@@ -86,7 +87,7 @@
 			var modal = $(this);
 			modal.find('.modal-title').text('Nova ' + recipient);
 			modal.find('#DataDespesa').val(new Date().toLocaleDateString());
-			modal.find("#formulario").attr("action", actionRecipient);
+			modal.find("#tipoMovimento").val(recipient);
 		}
 	});
 

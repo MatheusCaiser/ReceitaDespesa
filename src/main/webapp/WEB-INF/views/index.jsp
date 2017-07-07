@@ -5,6 +5,7 @@
 		<script src="<c:url value='/assets/js/app.js' />"></script>
 	</jsp:attribute>
 	<jsp:body>
+	<div></div>
 	<div class="container">
 		<table id="tableFinanceira" class="table table-striped table-bordered">
         <thead>
