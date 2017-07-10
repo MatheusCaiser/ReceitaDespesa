@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#tableFinanceira").DataTable({
+	table = $("#tableFinanceira").DataTable({
 		ajax : {
 			contentType : "application/json",
 			url : 'data/financas',
@@ -12,7 +12,8 @@ $(document).ready(function() {
 		language : {
 			url : '//cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
 		},
-		searching : false,
+		searching : true,
+		processing: true,
 		columns: [{
 			data: 'data',
 			render: function(data, type, row) {
@@ -33,5 +34,14 @@ $(document).ready(function() {
 		},{
 			data: 'tipo'
 		}]
+	});
+	
+	$("#dataFilter").datepicker({
+		format : "dd/mm/yyyy",
+		language : "pt-BR", 
+		todayHighlight : true
+	})
+	.on("changeDate", function(e) {
+		table.column(0).search(e.date.toISOString().substr(0, 10)).draw();
 	});
 });
