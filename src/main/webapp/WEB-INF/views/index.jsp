@@ -5,13 +5,17 @@
 		<script src="<c:url value='/assets/js/app.js' />"></script>
 	</jsp:attribute>
 	<jsp:body>
-	<div></div>
+	<div class="container">
+		<div class="form-group">
+			<input id="dataFilter" placeholder="Data search" />
+		</div>
+	</div>
 	<div class="container">
 		<table id="tableFinanceira" class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Data</th>
-                <th>Descrição</th>
+                <th>DescriÃ§Ã£o</th>
                 <th>Categoria</th>
                 <th>Valor</th>
             	<th>Tipo</th>
@@ -20,7 +24,7 @@
         <tfoot>
             <tr>
                 <th>Data</th>
-                <th>Descrição</th>
+                <th>DescriÃ§Ã£o</th>
                 <th>Categoria</th>
                 <th>Valor</th>
             	<th>Tipo</th>
