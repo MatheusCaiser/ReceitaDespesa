@@ -25,7 +25,8 @@ $(document).ready(function() {
 			data: 'categoria',
 			render: function(data, type, row) {
 				return data == null ? '' : data.nome; 
-			}
+			},
+			searchable: false
 		}, {
 			data: 'valor',
 			render: function(data, type, row) {
